@@ -21,7 +21,13 @@ public class Client {
     public static void main(String[] args) throws IOException {
         Input = new Scanner(System.in);
        client = new HttpClient();
-        System.out.println("Please enter a number between 1-6 for POST, PUT ,POST ,DEL operations");
+        System.out.println("Please make a choice between different options" +
+                "\n Press 1 To get list of all available tickets" +
+                "\n Press 2 to get available tickets by airline" +
+                "\n Press 3 to get an overview of all passengers" +
+                "\n Press 4 to reserve ticket" +
+                "\n Press 5 to create a new ticket" +
+                "\n Press 6 to delete a previously made booking request ");
 
         while(true) {
             String selectedOption = Input.nextLine();
@@ -33,20 +39,33 @@ public class Client {
                     getTicket();
                     break;
                 case "2":
-                    System.out.println("Please enter an airline name : ");
+                    System.out.println("***Please enter the exact  airline name as shown below to get an overview of available ticket***" +
+                            "\n Available airlines are: " +
+                            "\n Transavia" +
+                            "\n BritishAirways" +
+                            "\n Ryan" +
+                            "\nPIA" +
+                            "\nAirCanada" +
+                            "\nAirFrance");
                     String selectedAirline = Input.nextLine();
-                    getTicketByaAirline(selectedAirline);
-                    break;
+                    if(selectedAirline=="Transavia"||selectedAirline=="BritishAirways"||selectedAirline=="Ryan"||
+                    selectedAirline=="PIA"||selectedAirline=="AirCanada"||selectedAirline=="AirFrance"){
+                        getTicketByaAirline(selectedAirline);
+                        break;
+                    }else{
+                        System.out.println("Please make a selection again");
+                    }
+
                 case "3":
                     getPassengers();
                     break;
                 case "4":
                     System.out.println("Please enter the ticket Number : ");
-                    String selectedRoom= Input.nextLine();
-                    System.out.println("Please enter the passenger Number : ");
-                    String selectedStudent = Input.nextLine();
+                    String selectedTicket= Input.nextLine();
+                    System.out.println("Please enter a passenger Number : ");
+                    String selectedPassenger = Input.nextLine();
 
-                    bookTicket(Integer.parseInt(selectedRoom), Integer.parseInt(selectedStudent));
+                    bookTicket(Integer.parseInt(selectedTicket), Integer.parseInt(selectedPassenger));
                 case "5":
                     System.out.println("Please enter the ID and the airline for the new ticket");
                     System.out.println("ID: ");
@@ -56,10 +75,12 @@ public class Client {
                     System.out.println("Price: ");
                     String price = Input.nextLine();
                     createTicket(Integer.parseInt(id), city, price);
+                    getTicket();
+                    break;
                 case "6":
                     System.out.println("Please enter the ID of the ticket you want  to delete");
                     String selectedRoomId = Input.nextLine();
-                    deleteRoom(selectedRoomId);
+                    deleteTicket(selectedRoomId);
                 default:
                     break;
             }
@@ -132,7 +153,7 @@ public class Client {
 
     static void getTicketByaAirline(String airline) throws IOException {
         httpMethod = getHttpMethod("GET", URL + "tickets/search");
-        NameValuePair queryData = new NameValuePair("ticket", airline);
+        NameValuePair queryData = new NameValuePair("airline", airline);
 
         httpMethod = setData(httpMethod, "QUERY", new NameValuePair[]{queryData});
 
@@ -164,7 +185,7 @@ public class Client {
 
         StringRequestEntity body = new StringRequestEntity(
                 JsonWriter.formatJson(
-                        "{\"id\": " + id + ", \"airline\": " +  "\""+ airline + "\", " + "\"price\": \"" + price + "\"}"
+                        "{\"Id\": " + id + ", \"airline\": " +  "\""+ airline + "\", " + "\"price\": \"" + price + "\"}"
                 )
         );
 
@@ -174,7 +195,7 @@ public class Client {
 
         getResponse(postMethod);
 
-        postMethod = null;
+       // postMethod = null;
     }
 
 
@@ -187,8 +208,8 @@ public class Client {
 
     }
 
-    static void deleteRoom(String ticketId) throws IOException {
-        DeleteMethod deleteMethod = new DeleteMethod(URL + String.format("tickets/%s", ticketId));
+    static void deleteTicket(String ticketId) throws IOException {
+        DeleteMethod deleteMethod = new DeleteMethod(URL + String.format("ticket/%s", ticketId));
 
         getResponse(deleteMethod);
 

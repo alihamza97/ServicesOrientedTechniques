@@ -12,10 +12,10 @@ public class TicketDao {
         ticketsList = new ArrayList<Tickets>() {{
             add(new Tickets(1, 150, "Transavia"));
             add(new Tickets(2, 200, "Ryan"));
-            add(new Tickets(3, 100, "British Airways"));
+            add(new Tickets(3, 100, "BritishAirways"));
             add(new Tickets(4, 120, "PIA"));
-            add(new Tickets(5, 400, "Canadian Airlines"));
-            add(new Tickets(6, 136, "Air France"));
+            add(new Tickets(5, 400, "AirCanada"));
+            add(new Tickets(6, 136, "AirFrance"));
         }};
     }
 
