@@ -1,2 +1,0 @@
-# ServicesOrientedTechniques
-SERVICE ORIENTED TECHNIQUES IN JAVA
