@@ -1,5 +1,8 @@
 package com.resources.sot.models;
 
+import javax.inject.Singleton;
+
+@Singleton
 public class Tickets {
     private int id;
     private String airlines;

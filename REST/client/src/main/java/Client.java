@@ -39,7 +39,7 @@ public class Client {
                     getTicket();
                     break;
                 case "2":
-                    System.out.println("***Please enter the exact  airline name as shown below to get an overview of available ticket***" +
+                    System.out.println("***Please enter the airline name exactly as shown below to get details of all available ticket***" +
                             "\n Available airlines are: " +
                             "\n Transavia" +
                             "\n BritishAirways" +
@@ -75,7 +75,7 @@ public class Client {
                     System.out.println("Price: ");
                     String price = Input.nextLine();
                     createTicket(Integer.parseInt(id), city, price);
-                    getTicket();
+
                     break;
                 case "6":
                     System.out.println("Please enter the ID of the ticket you want  to delete");

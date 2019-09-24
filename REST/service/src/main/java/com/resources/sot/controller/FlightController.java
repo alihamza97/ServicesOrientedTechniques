@@ -13,6 +13,7 @@ public class FlightController {
     public TicketDao ticketDao = new TicketDao();
     public PassengersDao passengersDao = new PassengersDao();
 
+    //shows a list of passengers
     @GET
     @Path("passengers")
     @Produces(MediaType.APPLICATION_JSON)
@@ -20,6 +21,7 @@ public class FlightController {
         return passengersDao.getPassengersList();
     }
 
+    //shows a list of tickets
     @GET
     @Path("tickets")
     @Produces(MediaType.APPLICATION_JSON)
@@ -27,6 +29,7 @@ public class FlightController {
         return ticketDao.getTicketsList();
     }
 
+    //shows all the available tickets, when provided  a queryParam on the client
     @GET
     @Path("tickets/search")
     @Produces(MediaType.APPLICATION_JSON)
@@ -36,6 +39,7 @@ public class FlightController {
                 .collect(Collectors.toList());
     }
 
+    // add a new object of ticket to the existing list of tickets
     @POST
    @Path("create")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -47,7 +51,7 @@ public class FlightController {
         System.out.println("ticket created ");
 
     }
-
+    //reserve an available ticket by giving a passenger id and ticket id
     @PUT
     @Path("reserve/{ticketId}/tickets/{passengerId}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -65,19 +69,19 @@ public class FlightController {
             System.out.println("ticket reserved");
         }
     }
-
+  //romves a passenger by Id from the list
     @DELETE
     @Path("passengers/{id}")
     public void deletePassenger(@PathParam("id")int id){
         Passengers passengers = passengersDao.getPassengerById(id);
         passengersDao.getPassengersList().remove(passengers);
     }
-
+    // removes a passenger by id from the list
     @DELETE
     @Path("ticket/{id}")
     public void deleteTicket(@PathParam("id")int id){
-        Tickets r = ticketDao.getTicketById(id);
-        ticketDao.getTicketsList().remove(r);
+        Tickets t = ticketDao.getTicketById(id);
+        ticketDao.getTicketsList().remove(t);
         System.out.println("ticket deleted");
     }
 }

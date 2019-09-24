@@ -2,8 +2,10 @@ package com.resources.sot.dao;
 
 import com.resources.sot.models.Passengers;
 
+import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
+@Singleton
 public class PassengersDao {
     private List<Passengers> passengersList;
 
