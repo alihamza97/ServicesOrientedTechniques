@@ -1,0 +1,54 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="flights">
+    <output-path>$PROJECT_DIR$/out/artifacts/flights</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="service_main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/aopalliance-repackaged-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jakarta.json.bind-api-1.0.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jakarta.inject-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-media-jaxb-2.27.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-container-servlet-core.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jakarta.json-1.1.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jakarta.annotation-api-1.3.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-server.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-container-servlet.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-common-2.27.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/hk2-locator-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/validation-api-1.1.0.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/javax.activation-1.2.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-server-2.27.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/hk2-utils-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-media-json-binding.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jakarta.persistence-api-2.2.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jakarta.activation-api-1.2.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jakarta.xml.bind-api-2.3.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/javax.ws.rs-api-2.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-client-2.27.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-media-jaxb.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jakarta.json-api-1.1.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jakarta.ws.rs-api-2.1.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/hk2-api-2.5.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/javax.annotation-api-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/javax.inject-2.5.0-b42.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-media-sse.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-hk2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/org.osgi.core-4.2.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/javassist-3.22.0-GA.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jakarta.ws.rs-api-2.1.5-sources.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-common.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-client.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/osgi-resource-locator-1.0.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/validation-api-2.0.1.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jersey-container-jdk-http-2.27.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/yasson-1.0.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/service/lib/jackson-module-jaxb-annotations-2.1.2.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="service_main/web/Web Gradle : flights.war" />
+    </root>
+  </artifact>
+</component>
