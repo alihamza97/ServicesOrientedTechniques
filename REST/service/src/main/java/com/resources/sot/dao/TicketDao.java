@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import com.resources.sot.models.Tickets;
 
+import javax.inject.Singleton;
 
+@Singleton
 public class TicketDao {
     private List<Tickets> ticketsList;
 

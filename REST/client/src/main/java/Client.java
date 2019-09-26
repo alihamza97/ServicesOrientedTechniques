@@ -17,7 +17,8 @@ public class Client {
     static HttpClient client;
     static HttpMethodBase httpMethod;
 
-
+//Please note that when you delete a passenger/ticket or perform other PUT/POST operations, you will still be getting
+    // list of passengers/tickets because this REST service is stateless
     public static void main(String[] args) throws IOException {
         Input = new Scanner(System.in);
        client = new HttpClient();
@@ -27,7 +28,9 @@ public class Client {
                 "\n Press 3 to get an overview of all passengers" +
                 "\n Press 4 to reserve ticket" +
                 "\n Press 5 to create a new ticket" +
-                "\n Press 6 to delete a previously made booking request ");
+                "\n Press 6 to delete a previously made booking request " +
+                "\n Press 7 to create a new passenger" +
+                "\n Press 8 to delete a passenger");
 
         while(true) {
             String selectedOption = Input.nextLine();
@@ -48,13 +51,13 @@ public class Client {
                             "\nAirCanada" +
                             "\nAirFrance");
                     String selectedAirline = Input.nextLine();
-                    if(selectedAirline=="Transavia"||selectedAirline=="BritishAirways"||selectedAirline=="Ryan"||
-                    selectedAirline=="PIA"||selectedAirline=="AirCanada"||selectedAirline=="AirFrance"){
+//                    if(selectedAirline=="Transavia"||selectedAirline=="BritishAirways"||selectedAirline=="Ryan"||
+//                    selectedAirline=="PIA"||selectedAirline=="AirCanada"||selectedAirline=="AirFrance"){
                         getTicketByaAirline(selectedAirline);
                         break;
-                    }else{
-                        System.out.println("Please make a selection again");
-                    }
+//                    }else{
+//                        System.out.println("Please make a selection again");
+//                    }
 
                 case "3":
                     getPassengers();
@@ -71,16 +74,35 @@ public class Client {
                     System.out.println("ID: ");
                     String id = Input.nextLine();
                     System.out.println("Airline: ");
-                    String city = Input.nextLine();
+                    String airline = Input.nextLine();
                     System.out.println("Price: ");
                     String price = Input.nextLine();
-                    createTicket(Integer.parseInt(id), city, price);
+                    createTicket(Integer.parseInt(id), airline, price);
 
                     break;
+
                 case "6":
                     System.out.println("Please enter the ID of the ticket you want  to delete");
-                    String selectedRoomId = Input.nextLine();
-                    deleteTicket(selectedRoomId);
+                    String selectedTicketId = Input.nextLine();
+                    deleteTicket(selectedTicketId);
+                    break;
+                case "7":
+                    System.out.println("Please provide the data below to create a new passenger");
+
+                    System.out.println("ID: ");
+                    String ID = Input.nextLine();
+                    System.out.println("Name: ");
+                    String Name = Input.nextLine();
+                    System.out.println("Phone: ");
+                    String phone = Input.nextLine();
+                    int assignedTicket=1;
+                    createPassenger(Integer.parseInt(ID),Name,phone,assignedTicket);
+                    break;
+                case "8":
+                    System.out.println("Please enter the ID of the passenger you want  to delete");
+                    String selectedPassengerID = Input.nextLine();
+                    deletePassenger(selectedPassengerID);
+                    break;
                 default:
                     break;
             }
@@ -197,6 +219,23 @@ public class Client {
 
        // postMethod = null;
     }
+    static void createPassenger(int id, String name, String phone,int assignedTicket ) throws IOException {
+        PostMethod postMethod = new PostMethod(URL+"createPassenger");
+
+        StringRequestEntity body = new StringRequestEntity(
+                JsonWriter.formatJson(
+                        "{\"Id\": " + id + ", \"name\": " +  "\""+ name + "\", " + "\"phone\": \"" + phone + "\", "+ "\"assignedticket\": \""+assignedTicket+"\"}"
+                )
+        );
+
+        postMethod.setRequestEntity(body);
+        postMethod.setRequestHeader("Content-type",
+                "application/x-www-form-urlencoded");
+
+        getResponse(postMethod);
+
+        // postMethod = null;
+    }
 
 
     static void bookTicket(int ticketId, int passengerId) throws IOException {
@@ -210,6 +249,13 @@ public class Client {
 
     static void deleteTicket(String ticketId) throws IOException {
         DeleteMethod deleteMethod = new DeleteMethod(URL + String.format("ticket/%s", ticketId));
+
+        getResponse(deleteMethod);
+
+        deleteMethod = null;
+    }
+    static void deletePassenger(String PassengerId) throws IOException {
+        DeleteMethod deleteMethod = new DeleteMethod(URL + String.format("passengers/%s", PassengerId));
 
         getResponse(deleteMethod);
 

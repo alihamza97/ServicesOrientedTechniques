@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish.jersey.bundles:jaxrs-ri:2.28">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.bundles/jaxrs-ri/2.28/8ecaff632f9c80c8a597e39c9c04e334fb7a1b22/jaxrs-ri-2.28.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.bundles/jaxrs-ri/2.28/b6bff425f7898a8252615bdf7341dab346b6eed8/jaxrs-ri-2.28-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
