@@ -3,6 +3,8 @@ import com.resources.sot.dao.TicketDao;
 import com.resources.sot.dao.PassengersDao;
 import com.resources.sot.models.Tickets;
 import com.resources.sot.models.Passengers;
+
+import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -10,6 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Path("flights")
+@Singleton
 public class FlightController {
     public TicketDao ticketDao = new TicketDao();
     public PassengersDao passengersDao = new PassengersDao();
