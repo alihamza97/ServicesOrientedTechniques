@@ -82,8 +82,7 @@ public class ClientFlights {
                     String selectedTicket= Input.nextLine();
                     System.out.println("Please enter a passenger Number : ");
                     String selectedPassenger = Input.nextLine();
-
-                    bookTicket(Integer.parseInt(selectedTicket), Integer.parseInt(selectedPassenger));
+                    bookTicket(selectedTicket, selectedPassenger);
                 case "5":
                     System.out.println("Please enter the ID and the airline for the new ticket");
                     System.out.println("ID: ");
@@ -92,7 +91,7 @@ public class ClientFlights {
                     String airline = Input.nextLine();
                     System.out.println("Airline: ");
                     String price = Input.nextLine();
-                    createTicket2(id, airline, price);
+                    createTicket(id, airline, price);
 
                     break;
 
@@ -110,8 +109,8 @@ public class ClientFlights {
                     String Name = Input.nextLine();
                     System.out.println("Phone: ");
                     String phone = Input.nextLine();
-                    int assignedTicket=1;
-                    createPassenger(Integer.parseInt(ID),Name,phone,assignedTicket);
+
+                    createPassenger(ID,Name,phone,"1");
                     break;
                 case "8":
                     System.out.println("Please enter the ID of the passenger you want  to delete");
@@ -217,20 +216,8 @@ public class ClientFlights {
         httpMethod = null;
     }
 
-    static void createTicket(int id, int price, String airline) throws IOException {
-        PostMethod postMethod = new PostMethod(URL+"create");
-        String format=   "{\"Id\":" + "\""+ id +"\" " + ", \"price\": " +  "\""+ price + "\" " + ", \"airline\": \" " + airline + "\"}";
-        StringRequestEntity body = new StringRequestEntity(JsonWriter.formatJson(format),"application/x-www-form-urlencoded", "UTF-8");
 
-        postMethod.setRequestEntity(body);
-//        postMethod.setRequestHeader("Content-type",
-//                "application/x-www-form-urlencoded");
-
-        getResponse(postMethod);
-
-        // postMethod = null;
-    }
-    public static void createTicket2(String id, String price, String airline){
+    public static void createTicket(String id, String price, String airline){
 
         Form form=new Form();
         form.param("id",id);
@@ -246,33 +233,43 @@ public class ClientFlights {
         }
 
     }
-    static void createPassenger(int id, String name, String phone,int assignedTicket ) throws IOException {
-        PostMethod postMethod = new PostMethod(URL+"createPassenger");
+    public static void createPassenger(String id, String name, String phone,String assignedTicket){
 
-        StringRequestEntity body = new StringRequestEntity(
-                JsonWriter.formatJson(
-                        "{\"Id\": " + id + ", \"name\": " +  "\""+ name + "\", " + "\"phone\": \"" + phone + "\", "+ "\"assignedticket\": \""+assignedTicket+"\"}"
-                )
-        );
+        Form passsengerForm=new Form();
+        passsengerForm.param("id",id);
+        passsengerForm.param("name",name);
+        passsengerForm.param("phone",phone);
+        String path="create";
+        Entity<Form> entity=Entity.entity(passsengerForm, MediaType.APPLICATION_FORM_URLENCODED);
+        Response response=serviceTarget.path("createPassenger").request().accept(MediaType.TEXT_PLAIN).post(entity);
+        if(response.getStatus()==Response.Status.NO_CONTENT.getStatusCode()){
+            System.out.println("Passenger Created ");
+        }else{
+            System.out.println("no Passenger has been created");
+        }
 
-        postMethod.setRequestEntity(body);
-        postMethod.setRequestHeader("Content-type",
-                "application/x-www-form-urlencoded");
+    }
 
-        getResponse(postMethod);
+    public static void bookTicket(String id, String PassengerId){
 
-        // postMethod = null;
+        Form putForm=new Form();
+        putForm.param("id",id);
+        putForm.param("name",PassengerId);
+
+        String path="create";
+        Entity<Form> entity=Entity.entity(putForm, MediaType.APPLICATION_FORM_URLENCODED);
+        Response response=serviceTarget.path("reserve/"+id+"/tickets/"+PassengerId).request().accept(MediaType.TEXT_PLAIN).post(entity);
+        if(response.getStatus()==Response.Status.NO_CONTENT.getStatusCode()){
+            System.out.println("Reservation Updated ");
+        }else{
+            System.out.println("no Reservation has been updated");
+        }
+
     }
 
 
-    static void bookTicket(int ticketId, int passengerId) throws IOException {
-        PutMethod putMethod = new PutMethod(URL + String.format("reserve/%s/tickets/%s", ticketId, passengerId));
 
-        getResponse(putMethod);
 
-        putMethod = null;
-
-    }
 
     static void deleteTicket(String ticketId) throws IOException {
         DeleteMethod deleteMethod = new DeleteMethod(URL + String.format("ticket/%s", ticketId));

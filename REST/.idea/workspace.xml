@@ -7,25 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f44162c2-6763-4f47-8a3d-bf270774913e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ClientFlights.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/out/production/classes/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flights/WEB-INF/classes/com/resources/sot/controller/FlightController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flights/WEB-INF/classes/com/resources/sot/controller/FlightController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flights/WEB-INF/classes/com/resources/sot/dao/PassengersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flights/WEB-INF/classes/com/resources/sot/dao/PassengersDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flights/WEB-INF/classes/com/resources/sot/dao/TicketDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flights/WEB-INF/classes/com/resources/sot/dao/TicketDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flights/WEB-INF/classes/com/resources/sot/models/Passengers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flights/WEB-INF/classes/com/resources/sot/models/Passengers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/flights/WEB-INF/classes/com/resources/sot/models/Tickets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/flights/WEB-INF/classes/com/resources/sot/models/Tickets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/out/production/classes/com/resources/sot/controller/FlightController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/out/production/classes/com/resources/sot/controller/FlightController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/out/production/classes/com/resources/sot/dao/PassengersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/out/production/classes/com/resources/sot/dao/PassengersDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/out/production/classes/com/resources/sot/dao/TicketDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/out/production/classes/com/resources/sot/dao/TicketDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/out/production/classes/com/resources/sot/models/Passengers.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/out/production/classes/com/resources/sot/models/Passengers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/out/production/classes/com/resources/sot/models/Tickets.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/out/production/classes/com/resources/sot/models/Tickets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/resources/sot/controller/FlightController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/resources/sot/controller/FlightController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/resources/sot/dao/PassengersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/resources/sot/dao/PassengersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/resources/sot/dao/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/resources/sot/dao/TicketDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/resources/sot/models/Passengers.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/resources/sot/models/Passengers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/resources/sot/models/Tickets.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/resources/sot/models/Tickets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ClientFlights.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ClientFlights.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/rest/.gradle/" />
@@ -237,13 +219,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="806" />
+          <entry key="java" value="1048" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="806" />
+          <entry key="JAVA" value="1048" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -277,8 +259,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/ClientFlights.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="234" column="29" lean-forward="true" selection-start-line="234" selection-start-column="29" selection-end-line="234" selection-end-column="29" />
+            <state relative-caret-position="217">
+              <caret line="266" column="9" lean-forward="true" selection-start-line="266" selection-start-column="9" selection-end-line="266" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -289,8 +271,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/src/main/java/com/resources/sot/controller/FlightController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-63">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="158">
+              <caret line="72" column="51" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1064,7 +1046,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -1165,7 +1147,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569590651860" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569596231103" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/service/src/main/java/com/resources" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -1205,7 +1187,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClientFlights">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="client_main" />
@@ -1344,8 +1326,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientFlights" />
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.ClientFlights" />
         <item itemvalue="Application.serv" />
         <item itemvalue="Gradle.client [run]" />
         <item itemvalue="Gradle.client [build]" />
@@ -1377,12 +1359,12 @@
       <workItem from="1569342747666" duration="7338000" />
       <workItem from="1569414482485" duration="11429000" />
       <workItem from="1569531611250" duration="5075000" />
-      <workItem from="1569581895069" duration="8591000" />
+      <workItem from="1569581895069" duration="9321000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124691000" />
+    <option name="totallyTimeSpent" value="125421000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1791,8 +1773,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/resources/sot/controller/FlightController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="158">
+          <caret line="72" column="51" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1801,8 +1783,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/ClientFlights.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="234" column="29" lean-forward="true" selection-start-line="234" selection-start-column="29" selection-end-line="234" selection-end-column="29" />
+        <state relative-caret-position="217">
+          <caret line="266" column="9" lean-forward="true" selection-start-line="266" selection-start-column="9" selection-end-line="266" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
